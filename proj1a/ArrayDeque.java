@@ -5,14 +5,14 @@ public class ArrayDeque<type>{
     private int size;
 
     public  ArrayDeque(){
-        type[] item=(type []) new Object[8];
+        item=(type []) new Object[8];
         nextFirst=4;
         nextLast=5;
         size=0;
     }
 
     public ArrayDeque(ArrayDeque other){
-        type[] item=(type[]) new Object[other.item.length];
+        item=(type[]) new Object[other.item.length];
         System.arraycopy(other.item,0,item,0,item.length);
         nextFirst=other.nextFirst;
         nextLast=other.nextLast;
@@ -123,10 +123,10 @@ public class ArrayDeque<type>{
 
     public type get(int index){
         int first=indexFirst();
-        if(first+index-1<=item.length-1){
-            return item[first+index-1];
+        if(first+index<=item.length-1){
+            return item[first+index];
         }else{
-            return item[index-item.length+first-1];
+            return item[index-item.length+first];
         }
     }
 
